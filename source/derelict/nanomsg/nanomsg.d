@@ -61,6 +61,7 @@ class DerelictNanomsgLoader : SharedLibLoader {
 		bindFunc(cast(void**)&nn_symbol_info, "nn_symbol_info");
 		bindFunc(cast(void**)&nn_term, "nn_term");
 		bindFunc(cast(void**)&nn_allocmsg, "nn_allocmsg");
+		bindFunc(cast(void**)&nn_reallocmsg, "nn_reallocmsg");
 		bindFunc(cast(void**)&nn_freemsg, "nn_freemsg");
 
 		version(none) {

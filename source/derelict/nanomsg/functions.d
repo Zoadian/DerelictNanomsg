@@ -39,8 +39,9 @@ extern( C ) @nogc nothrow {
     alias const char* function(int) da_nanomsg_nn_strerror;
     alias const char* function(int, int*) da_nanomsg_nn_symbol;
     alias int function(int, nn_symbol_properties*, int) da_nanomsg_nn_symbol_info;
-    alias void* function(size_t size, int type) da_nanomsg_nn_term;
-    alias void* function(void* msg, size_t size) da_nanomsg_nn_allocmsg;
+    alias void function() da_nanomsg_nn_term;
+	alias void* function(size_t, int) da_nanomsg_nn_allocmsg;
+	alias void* function(void*, size_t) da_nanomsg_nn_reallocmsg;
     alias int function(void*) da_nanomsg_nn_freemsg;
 	
 	version(none) {
@@ -97,6 +98,7 @@ __gshared {
 	da_nanomsg_nn_symbol_info nn_symbol_info;
 	da_nanomsg_nn_term nn_term;
 	da_nanomsg_nn_allocmsg nn_allocmsg;
+	da_nanomsg_nn_reallocmsg nn_reallocmsg;
 	da_nanomsg_nn_freemsg nn_freemsg;
 	
 	version(none) {
