@@ -215,3 +215,72 @@ struct nn_pollfd {
     short events;
     short revents;
 };
+
+
+
+
+
+/*****************/
+/* Pair          */
+/*****************/
+enum NN_PROTO_PAIR = 1;
+enum NN_PAIR = (NN_PROTO_PAIR * 16 + 0);
+
+/*****************/
+/* Pubsub        */
+/*****************/
+enum NN_PROTO_PUBSUB = 2;
+enum NN_PUB = (NN_PROTO_PUBSUB * 16 + 0);
+enum NN_SUB = (NN_PROTO_PUBSUB * 16 + 1);
+enum NN_SUB_SUBSCRIBE = 1;
+enum NN_SUB_UNSUBSCRIBE = 2;
+
+/*****************/
+/* ReqRep        */
+/*****************/
+enum NN_PROTO_REQREP = 3;
+enum NN_REQ = (NN_PROTO_REQREP * 16 + 0);
+enum NN_REP = (NN_PROTO_REQREP * 16 + 1);
+enum NN_REQ_RESEND_IVL = 1;
+
+/*****************/
+/* Pipeline      */
+/*****************/
+enum NN_PROTO_PIPELINE = 5;
+enum NN_PUSH = (NN_PROTO_PIPELINE * 16 + 0);
+enum NN_PULL= (NN_PROTO_PIPELINE * 16 + 1);
+
+/*****************/
+/* Survey        */
+/*****************/
+enum NN_PROTO_SURVEY = 6;
+enum NN_SURVEYOR = (NN_PROTO_SURVEY * 16 + 0);
+enum NN_RESPONDENT = (NN_PROTO_SURVEY * 16 + 1);
+enum NN_SURVEYOR_DEADLINE = 1;
+
+/*****************/
+/* Bus           */
+/*****************/
+enum NN_PROTO_BUS = 7;
+enum NN_BUS = (NN_PROTO_BUS * 16 + 0);
+
+
+
+
+
+
+/*****************/
+/* Inproc        */
+/*****************/
+enum NN_INPROC = -1;
+
+/*****************/
+/* Ipc           */
+/*****************/
+enum NN_IPC = -2;
+
+/*****************/
+/* Tcp           */
+/*****************/
+enum NN_TCP = -3;
+enum NN_TCP_NODELAY = 1;

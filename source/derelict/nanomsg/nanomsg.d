@@ -62,6 +62,11 @@ class DerelictNanomsgLoader : SharedLibLoader {
             bindFunc(cast(void**)&nanomsgTerm, "nn_term");
             bindFunc(cast(void**)&nanomsgAllocmsg, "nn_allocmsg");
             bindFunc(cast(void**)&nanomsgFreemsg, "nn_freemsg");
+
+			version(none) {
+				//...
+			}
+
             bindFunc(cast(void**)&nanomsgSocket, "nn_socket");
             bindFunc(cast(void**)&nanomsgClose, "nn_close");
             bindFunc(cast(void**)&nanomsgSetsockopt, "nn_setsockopt");
