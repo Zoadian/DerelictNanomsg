@@ -1,0 +1,16 @@
+{
+    "name": "derelict_extras-nanomsg",
+    "description": "Dynamic bindings to nanomsg.",
+    "homepage": "https://github.com/Zoadian/DerelictNanomsg",
+    "license": "BSL-1.0",
+    "authors": [
+        "Felix Hufnagel"
+    ],
+
+    "targetName": "DerelictNanomsg",
+    "targetPath": "lib",
+
+    "dependencies": {
+        "derelict-util": ">=1.0.2"
+    }
+}
