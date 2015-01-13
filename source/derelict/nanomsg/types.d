@@ -123,20 +123,20 @@ enum NN_UNIT_BOOLEAN = 4;
 /*  Structure that is returned from nn_symbol  */
 struct nn_symbol_properties {
 
-    /*  The constant value  */
-    int value;
+	/*  The constant value  */
+	int value;
 
-    /*  The constant name  */
-    const char* name;
+	/*  The constant name  */
+	const char* name;
 
-    /*  The constant namespace, or zero for namespaces themselves */
-    int ns;
+	/*  The constant namespace, or zero for namespaces themselves */
+	int ns;
 
-    /*  The option type for socket option constants  */
-    int type;
+	/*  The option type for socket option constants  */
+	int type;
 
-    /*  The unit for the option value for socket option constants  */
-    int unit;
+	/*  The unit for the option value for socket option constants  */
+	int unit;
 };
 
 /******************************************************************************/
@@ -151,21 +151,21 @@ enum NN_MSG = cast(size_t)(-1);
 /******************************************************************************/
 
 struct nn_iovec {
-    void* iov_base;
-    size_t iov_len;
+	void* iov_base;
+	size_t iov_len;
 };
 
 struct nn_msghdr {
-    nn_iovec* msg_iov;
-    int msg_iovlen;
-    void* msg_control;
-    size_t msg_controllen;
+	nn_iovec* msg_iov;
+	int msg_iovlen;
+	void* msg_control;
+	size_t msg_controllen;
 };
 
 struct nn_cmsghdr {
-    size_t cmsg_len;
-    int cmsg_level;
-    int cmsg_type;
+	size_t cmsg_len;
+	int cmsg_level;
+	int cmsg_type;
 };
 
 /*  SP address families.                                                      */
@@ -211,9 +211,9 @@ enum NN_POLLIN = 1;
 enum NN_POLLOUT = 2;
 
 struct nn_pollfd {
-    int fd;
-    short events;
-    short revents;
+	int fd;
+	short events;
+	short revents;
 };
 
 

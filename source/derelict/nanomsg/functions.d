@@ -91,29 +91,29 @@ extern( C ) @nogc nothrow {
 }
 
 __gshared {
-    da_nanomsg_nn_errno nanomsgErrno;
-    da_nanomsg_nn_strerror nanomsgStrerror;
-    da_nanomsg_nn_symbol nanomsgSymbol;
-    da_nanomsg_nn_symbol_info nanomsgSymbolInfo;
-    da_nanomsg_nn_term nanomsgTerm;
-    da_nanomsg_nn_allocmsg nanomsgAllocmsg;
-    da_nanomsg_nn_freemsg nanomsgFreemsg;
+	da_nanomsg_nn_errno nn_errno;
+	da_nanomsg_nn_strerror nn_strerror;
+	da_nanomsg_nn_symbol nn_symbol;
+	da_nanomsg_nn_symbol_info nn_symbol_info;
+	da_nanomsg_nn_term nn_term;
+	da_nanomsg_nn_allocmsg nn_allocmsg;
+	da_nanomsg_nn_freemsg nn_freemsg;
 	
 	version(none) {
 		//...
 	}
 	
-    da_nanomsg_nn_socket nanomsgSocket;
-    da_nanomsg_nn_close nanomsgClose;
-    da_nanomsg_nn_setsockopt nanomsgSetsockopt;
-    da_nanomsg_nn_getsockopt nanomsgGetsockopt;
-    da_nanomsg_nn_bind nanomsgBind;
-    da_nanomsg_nn_connect nanomsgConnect;
-    da_nanomsg_nn_shutdown nanomsgShutdown;
-    da_nanomsg_nn_send nanomsgSend;
-    da_nanomsg_nn_recv nanomsgRecv;
-    da_nanomsg_nn_sendmsg nanomsgSendmsg;
-    da_nanomsg_nn_recvmsg nanomsgRecvMsg;
-    da_nanomsg_nn_poll nanomsgPoll;
-    da_nanomsg_nn_device nanomsgDevice;
+	da_nanomsg_nn_socket nn_socket;
+	da_nanomsg_nn_close nn_close;
+	da_nanomsg_nn_setsockopt nn_setsockopt;
+	da_nanomsg_nn_getsockopt nn_getsockopt;
+	da_nanomsg_nn_bind nn_bind;
+	da_nanomsg_nn_connect nn_connect;
+	da_nanomsg_nn_shutdown nn_shutdown;
+	da_nanomsg_nn_send nn_send;
+	da_nanomsg_nn_recv nn_recv;
+	da_nanomsg_nn_sendmsg nn_sendmsg;
+	da_nanomsg_nn_recvmsg nn_recvmsg;
+	da_nanomsg_nn_poll nn_poll;
+	da_nanomsg_nn_device nn_device;
 }

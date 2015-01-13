@@ -33,12 +33,12 @@ public {
 }
 
 private {
-    import derelict.util.loader;
-    import derelict.util.system;
+	import derelict.util.loader;
+	import derelict.util.system;
 
-    static if( Derelict_OS_Windows )
-        enum libNames = "nanomsg.dll";
-    else
+	static if( Derelict_OS_Windows )
+	    enum libNames = "nanomsg.dll";
+	else
         static assert( 0, "Need to implement Nanomsg2 libNames for this operating system." );
 }
 
@@ -50,46 +50,46 @@ load this function and call it before the load method returns. Otherwise, bad th
 private extern( C ) nothrow alias da_Nanomsg_SetMainReady = void function();
 
 class DerelictNanomsgLoader : SharedLibLoader {
-      public this() {
-            super( libNames );
-      }
+	public this() {
+	    super( libNames );
+	}
 
-      protected override void loadSymbols() {
-            bindFunc(cast(void**)&nanomsgErrno, "nn_errno");
-            bindFunc(cast(void**)&nanomsgStrerror, "nn_strerror");
-            bindFunc(cast(void**)&nanomsgSymbol, "nn_symbol");
-            bindFunc(cast(void**)&nanomsgSymbolInfo, "nn_symbol_info");
-            bindFunc(cast(void**)&nanomsgTerm, "nn_term");
-            bindFunc(cast(void**)&nanomsgAllocmsg, "nn_allocmsg");
-            bindFunc(cast(void**)&nanomsgFreemsg, "nn_freemsg");
+	protected override void loadSymbols() {
+		bindFunc(cast(void**)&nn_errno, "nn_errno");
+		bindFunc(cast(void**)&nn_strerror, "nn_strerror");
+		bindFunc(cast(void**)&nn_symbol, "nn_symbol");
+		bindFunc(cast(void**)&nn_symbol_info, "nn_symbol_info");
+		bindFunc(cast(void**)&nn_term, "nn_term");
+		bindFunc(cast(void**)&nn_allocmsg, "nn_allocmsg");
+		bindFunc(cast(void**)&nn_freemsg, "nn_freemsg");
 
-			version(none) {
-				//...
-			}
+		version(none) {
+			//...
+		}
 
-            bindFunc(cast(void**)&nanomsgSocket, "nn_socket");
-            bindFunc(cast(void**)&nanomsgClose, "nn_close");
-            bindFunc(cast(void**)&nanomsgSetsockopt, "nn_setsockopt");
-            bindFunc(cast(void**)&nanomsgGetsockopt, "nn_getsockopt");
-            bindFunc(cast(void**)&nanomsgBind, "nn_bind");
-            bindFunc(cast(void**)&nanomsgConnect, "nn_connect");
-            bindFunc(cast(void**)&nanomsgShutdown, "nn_shutown");
-            bindFunc(cast(void**)&nanomsgSend, "nn_send");
-            bindFunc(cast(void**)&nanomsgRecv, "nn_recv");
-            bindFunc(cast(void**)&nanomsgSendmsg, "nn_sendmsg");
-            bindFunc(cast(void**)&nanomsgRecvMsg, "nn_recvmsg");
-            bindFunc(cast(void**)&nanomsgPoll, "nn_poll");
-            bindFunc(cast(void**)&nanomsgDevice, "nn_device");
-      }
+		bindFunc(cast(void**)&nn_socket, "nn_socket");
+		bindFunc(cast(void**)&nn_close, "nn_close");
+		bindFunc(cast(void**)&nn_setsockopt, "nn_setsockopt");
+		bindFunc(cast(void**)&nn_getsockopt, "nn_getsockopt");
+		bindFunc(cast(void**)&nn_bind, "nn_bind");
+		bindFunc(cast(void**)&nn_connect, "nn_connect");
+		bindFunc(cast(void**)&nn_shutdown, "nn_shutdown");
+		bindFunc(cast(void**)&nn_send, "nn_send");
+		bindFunc(cast(void**)&nn_recv, "nn_recv");
+		bindFunc(cast(void**)&nn_sendmsg, "nn_sendmsg");
+		bindFunc(cast(void**)&nn_recvmsg, "nn_recvmsg");
+		bindFunc(cast(void**)&nn_poll, "nn_poll");
+		bindFunc(cast(void**)&nn_device, "nn_device");
+	}
 }
 
 __gshared DerelictNanomsgLoader DerelictNanomsg;
 
 shared static this() {
-    DerelictNanomsg = new DerelictNanomsgLoader();
+	DerelictNanomsg = new DerelictNanomsgLoader();
 }
 
 shared static ~this()
 {
-    DerelictNanomsg.unload();
+	DerelictNanomsg.unload();
 }
